@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/messagehub', { useNewUrlParser: true });
+mongoose.connect('mongodb://gogo:Iamnumber4@172.17.0.2/messagehub', { useNewUrlParser: true });
 
 let db = mongoose.connection
 if (!db) {
