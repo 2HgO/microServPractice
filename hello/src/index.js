@@ -26,4 +26,4 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => res.send('Hello World with express and nodemon'));
 app.use('/message', apiRoutes);
 
-app.listen(port, () => console.log(`Running inspiration on port ${ port }`));
+app.listen(port, '0.0.0.0', () => console.log(`Running inspiration on port ${ port }`));
