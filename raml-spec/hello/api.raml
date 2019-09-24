@@ -1,0 +1,37 @@
+#%RAML 1.0
+time: hello
+version: v1
+baseUri: /message
+
+/:
+  description: a hello world message
+  get:
+    description: get the hello world message
+    responses:
+      200:
+        body:
+          application/json:
+            example: {"message": "Hello World!"}
+  post:
+    description: adds a message to the message pool
+    responses:
+      200:
+        body:
+          description: a success message
+          application/json:
+            example: {"status": "success"}
+      404:
+        body:
+          description: error changing default message
+          application/json:
+            example: {"status": "failed"}
+  /{name}:
+    description: personalized message
+    get:
+      description: get a personalized message for `name = {name}`
+      responses:
+        200:
+          body:
+            description: a personalized message
+            application/json:
+              example: {"message": "Welcome to the app gogo"}
